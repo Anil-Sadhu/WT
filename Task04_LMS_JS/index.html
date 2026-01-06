@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Learning Platform</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Online Learning Management System</h1>
+  <nav>
+    <button>Home</button>
+    <button>Courses</button>
+    <button>About</button>
+    <button>Contact</button>
+    <button>Login</button>
+  </nav>
+</header>
+
+<section class="courses">
+  <iframe src="image1.html"></iframe>
+  <iframe src="image2.html"></iframe>
+  <iframe src="image3.html"></iframe>
+</section>
+
+<section class="media">
+  <h2>Course Introduction</h2>
+  <video controls>
+    <source src="media/intro.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section class="media">
+  <h2>Theme Audio</h2>
+  <audio controls>
+    <source src="media/theme.mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+<!-- REAL-TIME FORMS -->
+<section class="forms">
+
+  <!-- Login Form -->
+  <form class="card">
+    <h3>Login</h3>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button class="primary">Login</button>
+  </form>
+
+  <!-- Course Registration -->
+  <form class="card">
+    <h3>Enroll Course</h3>
+    <input type="text" placeholder="Student Name">
+    <select>
+      <option>Select Course</option>
+      <option>Java</option>
+      <option>C++</option>
+      <option>JavaScript</option>
+    </select>
+    <button class="primary">Enroll</button>
+  </form>
+
+  <!-- Feedback Form -->
+  <form class="card">
+    <h3>Feedback</h3>
+    <textarea placeholder="Write feedback..."></textarea>
+    <button class="secondary">Submit</button>
+  </form>
+
+</section>
+
+<footer>
+  © 2025 Online Learning Platform
+</footer>
+
+
+<section style="padding:30px">
+
+  <h2>JavaScript Interaction Demo</h2>
+
+  <p id="courseInfo"></p>
+  <p id="priceInfo"></p>
+
+  <button id="updateBtn">Update Course Price</button>
+  <button id="loginBtn">Login</button>
+
+  <br><br>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <p id="liveName"></p>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
