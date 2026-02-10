@@ -19,11 +19,14 @@ if (!$row) {
     die("User not found");
 }
 
-// Case-sensitive comparison
-if (strcmp($password, $row['password']) === 0) {
+//Case Sensitive comparision for password
+if (strcmp($password, $row['password']) === 0) 
+{
     echo "Login Successful";
     print "<br>Welcome " . htmlspecialchars($row['name']);
-} else {
+} 
+else 
+{
     die("Invalid Password");
 }
 ?>
