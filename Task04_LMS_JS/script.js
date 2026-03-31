@@ -1,82 +1,156 @@
-const courseName = "Java Full Stack";
-let coursePrice = 5000;
+// ============================
+// 1. VARIABLES
+// ============================
 
-console.log(courseName);
-console.log(coursePrice);
+// const variable
+const userName = "Anil";
 
-document.getElementById("courseInfo").innerText =
-  "Course: " + courseName;
+// let variable
+let experience = 1;
 
-document.getElementById("priceInfo").innerText =
-  "Price: ₹" + coursePrice;
+// Display variables in DOM
+document.getElementById("userRole").textContent =
+"User Name: " + userName;
 
-// let reassignment
-coursePrice = 4500;
-console.log("Updated Price:", coursePrice);
+document.getElementById("experience").textContent =
+"Experience: " + experience + " year";
 
-// const reassignment (will give error if uncommented)
-// courseName = "Python";
+// reassignment using let
+experience = experience + 1;
 
-// Function declaration
-function showMessage(msg) {
-  alert(msg);
+// log values in console
+console.log("User:", userName);
+console.log("Experience:", experience);
+
+// const reassignment test (do not run)
+// userName = "New Name";
+
+
+
+// ============================
+// 2. FUNCTIONS
+// ============================
+
+// Function Declaration
+function updateExperience() {
+    experience++;
+    showExperience();
 }
 
-// Function expression
-const applyDiscount = function(price) {
-  return price - 500;
+// Function Expression
+const showExperience = function() {
+    document.getElementById("experience").textContent =
+    "Experience: " + experience + " years";
 };
 
-// Arrow function
-const updatePriceUI = (newPrice) => {
-  document.getElementById("priceInfo").innerText =
-    "Price: ₹" + newPrice;
+// Arrow Function
+const greeting = (name) => {
+    return "Hello " + name;
 };
 
-const course = {
-  name: "JavaScript",
-  duration: "3 Months",
-  available: true
-};
 
-console.log(course);
 
-// Access
-console.log(course.name);        // dot
-console.log(course["duration"]); // bracket
+// ============================
+// 3. OBJECT
+// ============================
 
-course.updateAvailability = function () {
-  this.available = !this.available;
-  return this.available;
-};
+const profile = {
+    name: "Anil",
+    role: "Web Developer",
+    courses: 3,
 
-document.getElementById("loginBtn").addEventListener("click", function () {
+    // ============================
+    // 4. METHOD
+    // ============================
 
-  const user = prompt("Enter your name:");
-
-  if (user) {
-    alert("Welcome " + user);
-
-    const confirmLogin = confirm("Do you want to continue?");
-    if (confirmLogin) {
-      showMessage("Login successful!");
+    addCourse: function() {
+        this.courses++;
+        return this.courses;
     }
-  }
+};
+
+// Dot notation
+console.log(profile.name);
+
+// Bracket notation
+console.log(profile["role"]);
+
+// Display object data
+document.getElementById("profileData").textContent =
+"Name: " + profile.name +
+", Role: " + profile.role +
+", Courses: " + profile.courses;
+
+// Log object
+console.log(profile);
+
+
+
+// ============================
+// 5. POPUP BOXES
+// ============================
+
+function showPopup() {
+
+    alert("Welcome to LMS Website");
+
+    let userInput = prompt("Enter your name");
+
+    let confirmAction = confirm("Do you want to continue?");
+
+    if (confirmAction) {
+        document.getElementById("liveGreeting").textContent =
+        "Hello " + userInput;
+    } else {
+        document.getElementById("liveGreeting").textContent =
+        "Action Cancelled";
+    }
+
+}
+
+
+
+// ============================
+// 6. EVENTS
+// ============================
+
+// Click Event
+document.getElementById("updateExperienceBtn")
+.addEventListener("click", function() {
+
+    updateExperience();
+    alert("Experience Updated!");
 
 });
 
-document.getElementById("updateBtn").addEventListener("click", function () {
-  const discountedPrice = applyDiscount(coursePrice);
-  updatePriceUI(discountedPrice);
+// Method Trigger Event
+document.getElementById("showProfileBtn")
+.addEventListener("click", function() {
+
+    profile.addCourse();
+
+    document.getElementById("profileData").textContent =
+    "Name: " + profile.name +
+    ", Role: " + profile.role +
+    ", Courses: " + profile.courses;
+
 });
 
-// Input event
-document.getElementById("nameInput").addEventListener("input", function (e) {
-  document.getElementById("liveName").innerText =
-    "Hello " + e.target.value;
+
+// Input Event
+document.getElementById("nameInput")
+.addEventListener("input", function(e) {
+
+    document.getElementById("liveGreeting").textContent =
+    greeting(e.target.value);
+
 });
 
-// Mouseover event
-document.getElementById("courseInfo").addEventListener("mouseover", function () {
-  this.style.color = "red";
+
+// Mouseover Event
+document.getElementById("showProfileBtn")
+.addEventListener("mouseover", function() {
+
+    this.style.backgroundColor = "orange";
+
 });
