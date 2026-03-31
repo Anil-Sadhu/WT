@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Traversing Example</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$("#btn").click(function(){
+
+$("p").parent().css("border","3px solid red");
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="container">
+
+<p>Paragraph One</p>
+<p>Paragraph Two</p>
+
+</div>
+
+<br>
+
+<button id="btn">Highlight Parent</button>
+
+</body>
+</html>

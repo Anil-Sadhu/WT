@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Selectors</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<h1 class="anil">Selectors </h1>
+<p>hello guru....!</p> 
+<p id="room">hey buddy??</p>
+<button class="vinod">Change Color</button>
+<script>
+    $('.vinod').click(function()
+    {
+
+    $(".anil").css("color",'green');
+    $('p').css('color','blue');
+    $('#room').css('color','red');
+    
+    }
+    );
+</script>
+</body>
+</html>

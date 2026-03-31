@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Mouse Events</title>
+
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+//mouse click
+$("#btn").click(function(){
+alert("Button Clicked");
+});
+
+// hover
+$("#box").hover(
+function(){
+$(this).css("background","green");
+},
+function(){
+$(this).css("background","black");
+}
+);
+
+// mousedown
+$("#btn1").mousedown(function(){
+alert("Mouse button pressed");
+});
+
+// mouseup
+$("#btn2").mouseup(function(){
+alert("Mouse button released");
+});
+
+// double click
+$("#text").dblclick(function(){
+$(this).css("color","orange");
+});
+
+$("#input").keypress(function(){
+$("#msg").text("Key is being pressed"); // key being pressed.
+});
+
+$("#input").keydown(function(){ 
+$("#msg").text("Key down event detected"); //shift,ctrl...
+});
+
+$("#input").keyup(function(){
+$("#msg").text("Key Released"); // releases a key
+});
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Mouse Events Demo</h2>
+
+<button id="btn">Click me</button>
+
+<div id="box" style="width:120px;height:120px;background:red;"></div>
+
+<br>
+
+<button id="btn1">Press Mouse</button>
+
+<button id="btn2">Release Mouse</button>
+
+<br><br>
+
+<p id="text">Double click this text</p>
+
+<h2>Keypress Event</h2>
+
+<input type="text" id="input" placeholder="Type something">
+
+<p id="msg"></p>
+
+</body>
+</html>

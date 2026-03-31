@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Effects Example</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$("#hide").click(function(){
+
+$("#box").hide();
+
+});
+
+$("#show").click(function(){
+
+$("#box").show();
+
+});
+
+$("#fade").click(function(){
+
+$("#box").fadeToggle();
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="box" style="width:100px;height:100px;background:red;"></div>
+
+<br><br>
+
+<button id="hide">Hide</button>
+
+<button id="show">Show</button>
+
+<button id="fade">Fade Toggle</button>
+
+</body>
+</html>

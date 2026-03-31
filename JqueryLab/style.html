@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Style Example</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+.highlight{
+color:red;
+font-size:24px;
+background:yellow;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+$("#add").click(function(){
+
+$("#para").addClass("highlight");
+
+});
+
+$("#remove").click(function(){
+
+$("#para").removeClass("highlight");
+
+});
+
+$("#btn").click(function(){
+
+$("#text").toggleClass("highlight");
+
+});
+
+$("#check").click(function(){
+
+if($("#text").hasClass("highlight")){
+alert("Class exists");
+}
+else{
+alert("Class not found");
+}
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<p id="para">Hello jQuery Style</p>
+
+<button id="add">Add Style</button>
+
+<button id="remove">Remove Style</button>
+
+<p id="text">This is a paragraph</p>
+
+<button id="btn">Toggle Style</button>
+
+<p id="text" class="highlight">Check my class</p>
+
+<button id="check">Check Class</button>
+
+</body>
+</html>
